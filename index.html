@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12324a" />
+    <meta name="description" content="BidWise is an evidence-led tender compliance workspace for procurement review." />
+    <title>BidWise | Tender compliance workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+    <style>
+      .view[hidden] { display: none !important; }
+      @keyframes caseReveal { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+      @keyframes documentReveal { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+      @keyframes activeScan { 0%, 100% { box-shadow: inset 0 0 0 0 rgba(42,117,111,0); } 50% { box-shadow: inset 3px 0 0 0 rgba(42,117,111,.75); } }
+      .case-card { animation: caseReveal .38s ease both; }
+      .case-card:nth-child(2) { animation-delay: .05s; }.case-card:nth-child(3) { animation-delay: .1s; }.case-card:nth-child(4) { animation-delay: .15s; }
+      .pdf-paper > * { animation: documentReveal .24s ease both; }.doc-choice.active { box-shadow: inset 3px 0 0 #2a756f; }.pipe-step.active { animation: activeScan 1.1s ease-in-out infinite; }
+      .hero::after { content: ""; position: absolute; width: 180px; height: 180px; right: -42px; bottom: 23px; border: 1px solid rgba(42,117,111,.22); border-radius: 50%; pointer-events: none; }
+      .hero { position: relative; }.case-snapshot { z-index: 1; }.case-card:focus-visible, .doc-choice:focus-visible { outline: 3px solid rgba(42,117,111,.45); outline-offset: 3px; }
+      .case-card:hover { box-shadow: 5px 6px 0 #ddd9cf; }.document-studio { background-image: linear-gradient(135deg, rgba(255,255,255,.32), transparent 45%); }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="BidWise home"><span class="brand-mark" aria-hidden="true">B</span><span>BidWise</span></a>
+      <nav aria-label="Primary navigation"><a href="#/">Overview</a><a href="#/workspace">Assessments</a><a href="#/about">Method</a></nav>
+      <a class="quiet-link" href="#/workspace">Open workspace <span>→</span></a>
+    </header>
+
+    <main>
+      <section class="view" data-view="home" id="home">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="kicker">Tender compliance workspace</p>
+            <h1>Clearer tender review,<br /><em>one requirement at a time.</em></h1>
+            <p class="lede">BidWise brings tender requirements, bidder evidence and review notes into one calm, traceable workspace—so officers spend less time searching and more time deciding.</p>
+            <div class="hero-actions"><a class="button primary" href="#/workspace">Explore assessment cases <span>→</span></a><button class="link-button" id="run-demo-home" type="button">View a completed review <span>↗</span></button></div>
+            <p class="human-line"><span>●</span> A decision-support tool. Final approval remains with the authorised officer.</p>
+          </div>
+          <div class="case-snapshot" aria-label="Assessment snapshot">
+            <div class="snapshot-top"><span>ASSESSMENT SNAPSHOT</span><span>REFERENCE VIEW</span></div>
+            <div class="snapshot-title"><div><p>Reference procurement case</p><h2>Network infrastructure</h2></div><span class="score-badge">82<small>/100</small></span></div>
+            <div class="snapshot-table"><div><span>Requirement</span><span>Evidence</span><span>Status</span></div><div><b>Entity registration</b><span>Registration record · p. 1</span><i class="pass">Verified</i></div><div><b>Average turnover</b><span>Turnover statement · p. 3</span><i class="review">Review</i></div><div><b>Integrity declaration</b><span>Not located</span><i class="action">Missing</i></div></div>
+            <div class="snapshot-foot"><span>12 requirements assessed</span><a href="#/workspace">View evidence →</a></div>
+          </div>
+        </div>
+        <section class="reason-strip"><article><span>01</span><h2>Start with the source</h2><p>Every check is connected to a tender clause or a bidder document—not a vague confidence score.</p></article><article><span>02</span><h2>Keep the review consistent</h2><p>A common first-level checklist helps teams give every bidder the same initial treatment.</p></article><article><span>03</span><h2>Leave room for judgement</h2><p>Ambiguous evidence is surfaced for a person to review. BidWise does not make procurement decisions.</p></article></section>
+        <section class="home-section"><div><p class="kicker">A practical workflow</p><h2>Built around how review teams actually work.</h2></div><div class="workflow"><article><b>01</b><h3>Read the tender</h3><p>Extract eligibility, technical and documentary requirements from the source PDF.</p></article><article><b>02</b><h3>Map supporting proof</h3><p>Match bidder documents to each requirement and retain the evidence reference.</p></article><article><b>03</b><h3>Prepare the queue</h3><p>Separate clear passes from items that deserve officer attention.</p></article></div></section>
+      </section>
+
+      <section class="view workspace" data-view="workspace" id="workspace" hidden>
+        <div class="workspace-intro"><div><p class="kicker">Assessment desk</p><h1>Choose a case, inspect the documents, then review.</h1><p>Open a fictional procurement reference case below to see how the platform records tender clauses, bidder evidence and review notes.</p></div><span class="desk-date">TRAINING MODE<br /><b>FICTIONAL DOCUMENT SETS</b></span></div>
+        <section class="sample-section" aria-labelledby="samples-title"><div class="section-heading"><div><p class="kicker">Assessment reference cases</p><h2 id="samples-title">Select a tender to inspect its requirements and the bidder evidence submitted against them.</h2></div><p>These illustrative cases use invented organisations, suppliers and document details. They are not issued by any public authority.</p></div><div class="case-grid" id="case-grid"></div></section>
+        <section class="document-studio" aria-labelledby="document-title"><div class="doc-studio-head"><div><p class="kicker">Document reader</p><h2 id="document-title">Tender and bidder pack</h2><p id="case-description">Select a reference case to see its tender and bidder documents.</p></div><button class="button primary" id="analyse-sample" type="button">Prepare assessment <span>→</span></button></div><div class="document-shell"><aside class="document-list" id="document-list" aria-label="Reference documents"></aside><article class="pdf-reader"><div class="pdf-toolbar"><span class="pdf-label"><i></i> <b id="pdf-name">Tender document.pdf</b></span><span id="pdf-pages">Page 1 of 2</span></div><div class="pdf-paper" id="pdf-paper"></div><div class="pdf-caption"><span>On-page illustrative document preview</span><span>Training reference only</span></div></article></div></section>
+        <section class="upload-section"><div class="upload-heading"><p class="kicker">Your own files</p><h2>Start a separate assessment</h2><p>PDF only, up to 25 MB per file. The live assessment API can be connected for real document analysis.</p></div><div class="upload-layout"><div class="upload-stack"><article class="upload-card"><div><span class="small-label">01 · REQUIRED</span><h3>Tender document</h3><p>One tender or RFP PDF.</p></div><label class="dropzone" for="tender-file"><input id="tender-file" type="file" accept="application/pdf,.pdf" /><b>Choose tender PDF</b><small>or drop it here</small></label><div class="file-slot" id="tender-slot">No tender attached</div></article><article class="upload-card"><div><span class="small-label">02 · REQUIRED</span><h3>Bidder documents</h3><p>Technical, financial and supporting PDFs.</p></div><label class="dropzone" for="bidder-file"><input id="bidder-file" type="file" accept="application/pdf,.pdf" multiple /><b>Choose bidder PDFs</b><small>one or more files</small></label><div class="file-slot" id="bidder-slot">No bidder documents attached</div></article></div><aside class="review-note"><span class="small-label">WHAT YOU WILL GET</span><h3>A review-ready first pass.</h3><ul><li>Requirements extracted from the tender</li><li>Evidence references from bidder files</li><li>Clear pass, review and missing markers</li></ul><button class="button dark full" id="verify-button" type="button" disabled>Start compliance review <span>→</span></button><p id="verify-hint">Attach a tender and at least one bidder document to continue.</p></aside></div></section>
+      </section>
+
+      <section class="view processing" data-view="processing" id="processing" hidden><div class="processing-card"><p class="kicker">Assessment in progress</p><h1>Building the review trail</h1><p id="processing-copy">Reading the tender and organising the evidence.</p><div class="progress-track"><span id="progress-bar"></span></div><div class="pipeline" id="pipeline"></div><p class="human-line"><span>●</span> This is a first-level indicator, not a procurement decision.</p></div></section>
+
+      <section class="view results" data-view="results" id="results" hidden><div class="results-head"><div><p class="kicker">Assessment complete</p><h1 id="result-title">Network infrastructure · Bidder review</h1><p id="result-context">Reference case · Assessment overview</p></div><div><button class="button light" id="download-report" type="button">Download report <span>↓</span></button><a class="button primary" href="#/workspace">New assessment <span>+</span></a></div></div><section class="result-summary"><div class="result-score"><span class="small-label">COMPLIANCE INDICATOR</span><b id="score">82<small>/100</small></b><div class="meter"><span id="score-meter"></span></div></div><div><span class="status-note" id="status-note">Officer review recommended</span><h2 id="decision-heading">Three items need attention before a final decision.</h2><p id="decision-copy">The review table preserves the evidence found and clearly calls out what is still missing.</p></div><div class="review-guard"><span>Review principle</span><b>Evidence before decision</b><small>Authorised officer retains final approval.</small></div></section><div class="stat-line"><article><span>Requirements assessed</span><b id="stat-total">12</b></article><article><span>Verified</span><b class="green" id="stat-pass">8</b></article><article><span>Needs review</span><b class="gold" id="stat-review">2</b></article><article><span>Missing / action</span><b class="red" id="stat-action">2</b></article></div><section class="review-table"><div class="table-head"><div><p class="kicker">Evidence register</p><h2>Requirement-by-requirement review</h2></div><div class="filters" id="filters"><button class="active" data-filter="all">All</button><button data-filter="pass">Verified</button><button data-filter="review">Review</button><button data-filter="action">Action</button></div></div><div class="findings" id="findings"></div></section></section>
+
+      <section class="view about" data-view="about" id="about" hidden><p class="kicker">The method</p><h1>Useful automation should be easy to question.</h1><p class="about-copy">BidWise combines document extraction, rules-based checks and an evidence register. It is deliberately designed to show its working: source references, reasons for every status and a human review route for uncertain items.</p><div class="principles"><article><span>01</span><h2>Explainable</h2><p>Every result links back to a document, page or a stated absence of evidence.</p></article><article><span>02</span><h2>Consistent</h2><p>The same tender checklist can be applied across every bidder pack.</p></article><article><span>03</span><h2>Responsible</h2><p>The platform helps prioritise review; it never replaces the authorised procurement officer.</p></article></div></section>
+    </main>
+    <footer><span>BidWise</span><span>Evidence-led tender compliance review</span><span>Fictional training reference documents</span></footer><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="js/app.js"></script>
+  </body>
+</html>
