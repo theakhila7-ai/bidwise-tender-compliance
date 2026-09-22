@@ -30,7 +30,7 @@ Then open `http://127.0.0.1:5500`. Upload a tender and one or more bidder PDFs, 
 This repository includes a `render.yaml` Blueprint. It deploys the FastAPI service and the frontend together, so no separate API URL or production CORS change is required.
 
 1. Push this folder to a GitHub repository.
-2. In Render, select **New** -> **Blueprint**, then connect the repository.
+2. In Render, select **New** → **Blueprint**, then connect the repository.
 3. Review the generated service and choose **Apply**.
 4. When the build completes, open the generated Render URL. The website and `/docs` API documentation will be served from the same domain.
 
@@ -38,4 +38,4 @@ Before using real procurement data, implement the production controls listed in 
 
 ## Current analysis scope
 
-The included backend demonstrates requirement extraction and evidence mapping for 24-port managed Gigabit switches, Wi-Fi 6 access points, warranty duration, and on-site technical support. The design keeps a clear human-review boundary: BidWise supports an officer's decision and does not make the final procurement decision.
+The included backend demonstrates requirement extraction and evidence mapping for 24-port managed Gigabit switches, Wi-Fi 6 access points, warranty duration, and on-site technical support. The design keeps a clear human-review boundary: BidWise supports an officer’s decision and does not make the final procurement decision.
